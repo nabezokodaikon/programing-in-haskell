@@ -1,5 +1,6 @@
 # programing-in-haskell
 プログラミングHaskellを読んで学習。
+* [Programming in Haskell](http://www.cs.nott.ac.uk/~pszgmh/pih.html)
 
 ## 参考
 ### ビルドツール
@@ -11,7 +12,6 @@
 * [Hspec](https://hspec.github.io/)
 ### 記事
 * [本気で Haskell したい人向けの Stack チュートリアル](https://qiita.com/waddlaw/items/49874f4cf9b680e4b015)
-* [Programming in Haskell](http://www.cs.nott.ac.uk/~pszgmh/pih.html)
 * [「プログラミングHaskell」を読んだ](https://orangain.hatenablog.com/entry/programming-in-haskell)
 
 ## プロジェクト作成
