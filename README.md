@@ -1,6 +1,19 @@
 # programing-in-haskell
 プログラミングHaskellを読んで学習。
 
+## 参考
+### ビルドツール
+* [The Haskell Tool Stack](https://docs.haskellstack.org/en/stable/README/)
+* [Haskell Stack](https://haskell.e-bigmoon.com/stack/)
+### テスト系
+* [HSpec: A Testig Framework for Haskell](https://hspec.github.io/)
+* [hspec-example](https://github.com/hspec/hspec-example)
+* [Hspec](https://hspec.github.io/)
+### 記事
+* [本気で Haskell したい人向けの Stack チュートリアル](https://qiita.com/waddlaw/items/49874f4cf9b680e4b015)
+* [Programming in Haskell](http://www.cs.nott.ac.uk/~pszgmh/pih.html)
+* [「プログラミングHaskell」を読んだ](https://orangain.hatenablog.com/entry/programming-in-haskell)
+
 ## プロジェクト作成
 ```
 $ stack new my-project
