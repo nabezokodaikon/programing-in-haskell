@@ -40,4 +40,10 @@ spec = do
             -- drop' 3 [] `shouldBe` []
         it "drop' 3" $
             drop' 2 [1, 2, 3, 4] `shouldBe` [3, 4]
-        
+    describe "6.4 多重再帰" $ do
+        it "fibonacci" $
+            fibonacci 3 `shouldBe` 2
+        it "fibonacci 2" $
+            fibonacci 5 `shouldBe` 5
+        it "qsort" $
+            qsort [2, 5, 3, 1, 4] `shouldBe` [1, 2, 3, 4, 5]

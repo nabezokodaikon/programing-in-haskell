@@ -42,3 +42,15 @@ drop' :: Int -> [a] -> [a]
 drop' 0 xs = xs
 drop' _ [] = []
 drop' n (_ : xs) = drop (n - 1) xs
+
+fibonacci :: Int -> Int
+fibonacci 0 = 0
+fibonacci 1 = 1
+fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
+
+qsort :: Ord a => [a] -> [a]
+qsort [] = []
+qsort (x : xs) = qsort smaller ++ [x] ++ qsort larger
+                 where
+                     smaller = [a | a <- xs, a <= x]
+                     larger = [b | b <- xs, b > x]
