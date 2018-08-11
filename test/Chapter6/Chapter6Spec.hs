@@ -30,3 +30,14 @@ spec = do
             insert 3 [1, 2, 4, 5] `shouldBe` [1, 2, 3, 4, 5]
         it "isort" $
             isort [3, 2, 1, 4] `shouldBe` [1, 2, 3, 4]
+    describe "6.3 複数の引数" $ do
+        it "zip'" $
+            zip' ['a', 'b', 'c'] [1, 2, 3, 4] `shouldBe`
+            [('a', 1), ('b', 2), ('c', 3)]
+        it "drop'" $
+            drop' 0 [1, 2, 3] `shouldBe` [1, 2, 3]
+        -- it "drop' 2" $
+            -- drop' 3 [] `shouldBe` []
+        it "drop' 3" $
+            drop' 2 [1, 2, 3, 4] `shouldBe` [3, 4]
+        
