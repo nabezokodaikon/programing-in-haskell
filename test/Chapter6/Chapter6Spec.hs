@@ -47,3 +47,16 @@ spec = do
             fibonacci 5 `shouldBe` 5
         it "qsort" $
             qsort [2, 5, 3, 1, 4] `shouldBe` [1, 2, 3, 4, 5]
+    describe "6.5 相互再帰" $ do
+        it "even'" $
+            even' 4 `shouldBe` True
+        it "even'" $
+            even' 5 `shouldBe` False
+        it "odd'" $
+            odd' 4 `shouldBe` False 
+        it "odd'" $
+            odd' 5 `shouldBe` True
+        it "evens" $ -- 0番目は偶数
+            evens [1, 2, 3, 4, 5] `shouldBe` [1, 3, 5]  
+        it "odds" $
+            odds [1, 2, 3, 4, 5] `shouldBe` [2, 4]
