@@ -60,3 +60,6 @@ spec = do
             evens [1, 2, 3, 4, 5] `shouldBe` [1, 3, 5]  
         it "odds" $
             odds [1, 2, 3, 4, 5] `shouldBe` [2, 4]
+    describe "6.6 再帰の秘訣" $ do
+        it "init'" $
+            init' [1, 2, 3] `shouldBe` [1, 2]

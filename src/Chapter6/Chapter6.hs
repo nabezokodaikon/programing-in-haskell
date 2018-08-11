@@ -70,3 +70,7 @@ evens (x : xs) = x : odds xs
 odds :: [a] -> [a]
 odds [] = []
 odds (_ : xs) = evens xs
+
+init' :: [a] -> [a]
+init' [_] = []
+init' (x : xs) = x : init' xs 
