@@ -63,3 +63,32 @@ spec = do
     describe "6.6 再帰の秘訣" $ do
         it "init'" $
             init' [1, 2, 3] `shouldBe` [1, 2]
+    describe "6.8 練習問題" $ do
+        it "1. power" $
+            2 `power` 3 `shouldBe` 8 
+        it "3. and" $
+            and [True, True, True] `shouldBe` True
+        it "3. and 2" $
+            and [True, False, True] `shouldBe` False
+        it "3. concat''" $
+            concat'' [[1, 2], [3, 4], [5, 6]] `shouldBe` [1, 2, 3, 4, 5, 6]
+        it "3. replicate'" $
+            replicate' 3 1 `shouldBe` [1, 1, 1]
+        it "3. get" $
+            get [1, 2, 3] 0 `shouldBe` 1
+        it "3. get 2" $
+            get [1, 2, 3, 4, 5] 3 `shouldBe` 4
+        it "3. elem'" $
+            elem' 3 [1, 2, 4, 5] `shouldBe` False
+        it "3. elem' 2" $
+            elem' 3 [1, 2, 3, 4, 5] `shouldBe` True
+        it "4. merge" $
+            merge [2, 5, 6] [1, 3, 4, 7] `shouldBe` [1, 2, 3, 4, 5, 6, 7]
+        it "5. msort" $
+            msort [2, 5, 3, 1, 4] `shouldBe` [1, 2, 3, 4, 5]
+        it "6. sum'" $
+            sum' [1, 2, 3, 4] `shouldBe` 10
+        it "6. take'" $
+            take' 2 [1, 2, 3, 4] `shouldBe` [1, 2] 
+        it "6. last'" $
+            last' [1, 2, 3, 4] `shouldBe` 4

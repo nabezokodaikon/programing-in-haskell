@@ -74,3 +74,58 @@ odds (_ : xs) = evens xs
 init' :: [a] -> [a]
 init' [_] = []
 init' (x : xs) = x : init' xs 
+
+power :: Int -> Int -> Int
+power 0 _ = 0
+power _ 0 = 1
+power n m = n * (n `power` (m - 1))
+
+and' :: [Bool] -> Bool 
+and' [] = True
+and' (x : xs) = x && and xs
+
+concat'' :: [[a]] -> [a]
+concat'' [] = []
+concat'' (xs : xss) = xs ++ concat'' xss
+
+replicate' :: Int -> a -> [a]
+replicate' 0 _ = []
+replicate' n x = x : replicate' (n - 1) x
+
+get :: [a] -> Int -> a
+get (x : _) 0 = x 
+get (_ : xs) n = get xs (n - 1)
+
+elem' :: Eq a => a -> [a] -> Bool
+elem' _ [] = False
+elem' a (x : xs) = a == x || elem' a xs
+
+merge :: Ord a => [a] -> [a] -> [a]
+merge [] xs = xs
+merge xs [] = xs
+merge (x : xs) (y : ys) | x <= y = x : (merge xs (y : ys))
+                        | otherwise = y: (merge (x: xs) ys)
+
+halve :: [a] -> ([a], [a])
+halve xs = (take half xs, drop half xs)
+    where 
+        half = length xs `div` 2
+
+msort :: Ord a => [a] -> [a]
+msrot [] = []
+msort [x] = [x]
+msort xs = merge (msort left) (msort right)
+    where
+        (left, right) = halve xs
+
+sum' :: Num a => [a] -> a
+sum' [] = 0
+sum' (x : xs) = x + sum' xs
+
+take' :: Integral b => b -> [a] -> [a]
+take' 0 _ = []
+take' n (x : xs) = x : take' (n - 1) xs
+
+last' :: [a] -> a
+last' [x] = x
+last' (x : xs) = last' xs
