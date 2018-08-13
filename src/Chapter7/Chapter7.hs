@@ -49,3 +49,7 @@ sum2 = sum' 0
 
 sumViaFoldl :: [Int] -> Int
 sumViaFoldl = foldl (+) 0
+
+sumsqreven2 :: [Int] -> Int
+sumsqreven2 = sum . map (^2) . filter even
+-- sumsqreven ns = sum (map (^2) (filter even ns))
