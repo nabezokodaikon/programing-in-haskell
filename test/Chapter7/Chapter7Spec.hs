@@ -39,3 +39,44 @@ spec = do
             make8 [1, 0, 1, 1] `shouldBe` [1, 0, 1, 1, 0, 0, 0, 0]
         it "transmit" $
             transmit "abc" `shouldBe` "abc"
+    describe "7.8 練習問題" $ do
+        it "1 filterAndMap" $
+            filterAndMap [1, 2, 3, 4, 5] `shouldBe` [4, 8]
+        it "2 all'" $
+            all' (even) [1, 2, 3] `shouldBe` False
+        it "2 all' 2" $
+            all' (even) [2, 4, 6] `shouldBe` True
+        it "2 all''" $
+            all'' (even) [1, 2, 3] `shouldBe` False
+        it "2 all'' 2" $
+            all'' (even) [2, 4, 6] `shouldBe` True
+        it "2 any'" $
+            any' (even) [1, 2, 3] `shouldBe` True
+        it "2 any' 2" $
+            any' (even) [1, 3, 5] `shouldBe` False
+        it "2 any''" $
+            any'' (even) [1, 2, 3] `shouldBe` True
+        it "2 any'' 2" $
+            any'' (even) [1, 3, 5] `shouldBe` False
+        it "2 takeWhile'" $
+            takeWhile' even [2, 4, 6, 7] `shouldBe` [2, 4, 6]
+        it "2 takeWhile' 2" $
+            takeWhile' even [1, 4, 6, 7] `shouldBe` []
+        it "2 takeWhile''" $
+            takeWhile'' even [2, 4, 6, 7] `shouldBe` [2, 4, 6]
+        it "2 takeWhile'' 2" $
+            takeWhile'' even [1, 4, 6, 7] `shouldBe` []
+        it "2 dropWhile'" $
+            dropWhile' even [2, 4, 6, 7] `shouldBe` [7]
+        it "2 dropWhile' 2" $
+            dropWhile' even [1, 4, 6, 7] `shouldBe` [1, 4, 6, 7]
+        it "2 dropWhile''" $
+            dropWhile'' even [2, 4, 6, 7] `shouldBe` [7]
+        it "2 dropWhile'' 2" $
+            dropWhile'' even [1, 4, 6, 7] `shouldBe` [1, 4, 6, 7]
+        it "3 mapViaFoldr" $
+            mapViaFoldr (*2) [1, 2, 3] `shouldBe` [2, 4, 6]
+        it "3 filterViaFoldr" $
+            filterViaFoldr (even) [1, 2, 3] `shouldBe` [2]
+        it "4 dec2int" $
+            dec2int [2, 3, 4, 5] `shouldBe` 2345

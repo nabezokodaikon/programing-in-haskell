@@ -87,3 +87,51 @@ channel = id
 
 transmit :: String -> String
 transmit = decode . channel . encode
+
+filterAndMap :: [Int] -> [Int]
+filterAndMap = map (*2) . filter even
+
+all' :: (a -> Bool) -> [a] -> Bool
+all' f [] = True
+all' f (x : xs) = if f x then all' f xs
+                         else False
+
+all'' :: (a -> Bool) -> [a] -> Bool
+all'' f = and . map f
+
+any' :: (a -> Bool) -> [a] -> Bool
+any' f [] = False
+any' f (x : xs) = if f x then True
+                         else any' f xs
+
+any'' :: (a -> Bool) -> [a] -> Bool
+any'' f = or . map f
+
+takeWhile' :: (a -> Bool) -> [a] -> [a]
+takeWhile' f (x : xs) = if f x then x : takeWhile' f xs
+                               else []
+
+takeWhile'' :: (a -> Bool) -> [a] -> [a]
+takeWhile'' _ [] = []
+takeWhile'' f (x : xs) 
+    | f x = x : (takeWhile'' f xs)
+    | otherwise = []
+
+dropWhile' :: (a -> Bool) -> [a] -> [a]
+dropWhile' f (x : xs) = if f x then dropWhile' f xs
+                               else x : xs
+
+dropWhile'' :: (a -> Bool) -> [a] -> [a]
+dropWhile'' _ [] = []
+dropWhile'' f (x : xs) 
+    | f x = dropWhile'' f xs
+    | otherwise = x : xs
+
+mapViaFoldr :: (a -> b) -> [a] -> [b]
+mapViaFoldr f = foldr (\x acc -> f x : acc) []
+
+filterViaFoldr :: (a -> Bool) -> [a] -> [a]
+filterViaFoldr p = foldr (\x acc -> if p x then x : acc else acc) []
+
+dec2int :: [Int] -> Int
+dec2int = foldl (\acc x -> 10 * acc + x) 0
