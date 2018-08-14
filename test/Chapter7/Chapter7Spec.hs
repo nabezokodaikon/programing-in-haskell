@@ -28,3 +28,14 @@ spec = do
             sum2 [1, 2, 3] `shouldBe` 6
         it "sumViaFoldl" $
             sumViaFoldl [1, 2, 3] `shouldBe` 6
+    describe "7.6 文字列の変換器" $ do
+        it "bin2int" $
+            bin2int [1, 0, 1, 1] `shouldBe` 13
+        it "bin2int 2" $
+            bin2int [1, 0, 1, 1] `shouldBe` bin2int2 [1, 0, 1, 1]
+        it "int2bin" $
+            int2bin 13 `shouldBe` [1, 0, 1, 1]
+        it "make8" $
+            make8 [1, 0, 1, 1] `shouldBe` [1, 0, 1, 1, 0, 0, 0, 0]
+        it "transmit" $
+            transmit "abc" `shouldBe` "abc"
